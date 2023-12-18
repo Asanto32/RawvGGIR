@@ -22,12 +22,12 @@ Welcome to the CMI-DAIR Template Python Repository! This template is designed to
 ![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)
 [![pages](https://img.shields.io/badge/api-docs-blue)](https://cmi-dair.github.io/RawvGGIR)
 
-What problem does this tool solve?
+Comparing the common actigraphy motion metrics from raw accelerometer data with the GGIR computed outputs
 
 ## Features
 
 user defined directory with .gt3x raw data and GGIR output data
-will compare ENMO and angle z user defined number of days 
+will compare ENMO and angle z user defined number of days and user defined start date
 
 ## Installation
 
