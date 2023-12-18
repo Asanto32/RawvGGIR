@@ -14,7 +14,7 @@ Welcome to the CMI-DAIR Template Python Repository! This template is designed to
 - [ ] To set up an API documentation website, after the first successful build, go to the `Settings` tab of your repository, scroll down to the `GitHub Pages` section, and select `gh-pages` as the source. This will generate a link to your API docs.
 - [ ] Update stability badge in `README.md` to reflect the current state of the project. A list of stability badges to copy can be found [here](https://github.com/orangemug/stability-badges). The [node documentation](https://nodejs.org/docs/latest-v20.x/api/documentation.html#documentation_stability_index) can be used as a reference for the stability levels.
 
-# Project name
+# Raw v GGIR
 
 [![Build](https://github.com/cmi-dair/RawvGGIR/actions/workflows/test.yaml/badge.svg?branch=main)](https://github.com/cmi-dair/RawvGGIR/actions/workflows/test.yaml?query=branch%3Amain)
 [![codecov](https://codecov.io/gh/cmi-dair/RawvGGIR/branch/main/graph/badge.svg?token=22HWWFWPW5)](https://codecov.io/gh/cmi-dair/RawvGGIR)
