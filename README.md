@@ -5,7 +5,7 @@
 Welcome to the CMI-DAIR Template Python Repository! This template is designed to streamline your project setup and ensure a consistent structure. To get started, follow these steps:
 
 
-- [ ] Run `setup_template.py` to initialize the repository.
+- [x] Run `setup_template.py` to initialize the repository.
 - [ ] Replace the content of this `README.md` with details specific to your project.
 - [ ] Install the `pre-commit` hooks to ensure code quality on each commit.
 - [ ] Revise SECURITY.md to reflect supported versions or remove it if not applicable.
@@ -16,12 +16,11 @@ Welcome to the CMI-DAIR Template Python Repository! This template is designed to
 
 # Project name
 
-[![Build](https://github.com/cmi-dair/template-python-repository/actions/workflows/test.yaml/badge.svg?branch=main)](https://github.com/cmi-dair/template-python-repository/actions/workflows/test.yaml?query=branch%3Amain)
-[![codecov](https://codecov.io/gh/cmi-dair/template-python-repository/branch/main/graph/badge.svg?token=22HWWFWPW5)](https://codecov.io/gh/cmi-dair/template-python-repository)
+[![Build](https://github.com/cmi-dair/RawvGGIR/actions/workflows/test.yaml/badge.svg?branch=main)](https://github.com/cmi-dair/RawvGGIR/actions/workflows/test.yaml?query=branch%3Amain)
+[![codecov](https://codecov.io/gh/cmi-dair/RawvGGIR/branch/main/graph/badge.svg?token=22HWWFWPW5)](https://codecov.io/gh/cmi-dair/RawvGGIR)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 ![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/cmi-dair/template-python-repository/blob/main/LICENSE)
-[![pages](https://img.shields.io/badge/api-docs-blue)](https://cmi-dair.github.io/template-python-repository)
+[![pages](https://img.shields.io/badge/api-docs-blue)](https://cmi-dair.github.io/RawvGGIR)
 
 What problem does this tool solve?
 
@@ -35,26 +34,18 @@ What problem does this tool solve?
 
 Install this package via :
 
-```sh
-pip install APP_NAME
-```
 
-Or get the newest development version via:
-
-```sh
-pip install git+https://github.com/cmi-dair/template-python-repository
-```
 
 ## Quick start
 
 Short tutorial, maybe with a
 
 ```Python
-import APP_NAME
+import comparRaw
 
-APP_NAME.short_example()
+comparRaw.short_example()
 ```
 
 ## Links or References
 
-- [https://www.wikipedia.de](https://www.wikipedia.de)
+
