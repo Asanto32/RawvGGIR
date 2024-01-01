@@ -315,13 +315,13 @@ files = [
 
 [[package]]
 name = "pdoc"
-version = "14.1.0"
+version = "14.3.0"
 description = "API Documentation for Python Projects"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "pdoc-14.1.0-py3-none-any.whl", hash = "sha256:e8869dffe21296b3bd5545b28e7f07cae0656082aca43f8915323187e541b126"},
-    {file = "pdoc-14.1.0.tar.gz", hash = "sha256:3a0bd921a05c39a82b1505089eb6dc99d857b71b856aa60d1aca4d9086d0e18c"},
+    {file = "pdoc-14.3.0-py3-none-any.whl", hash = "sha256:9a8f9a48bda5a99c249367c2b99779dbdd9f4a56f905068c9c2d6868dbae6882"},
+    {file = "pdoc-14.3.0.tar.gz", hash = "sha256:40bf8f092fcd91560d5e6cebb7c21b65df699f90a468c8ea316235c3368d5449"},
 ]
 
 [package.dependencies]
@@ -330,7 +330,7 @@ MarkupSafe = "*"
 pygments = ">=2.12.0"
 
 [package.extras]
-dev = ["black", "hypothesis", "mypy", "pygments (>=2.14.0)", "pytest", "pytest-cov", "pytest-timeout", "ruff", "tox", "types-pygments"]
+dev = ["hypothesis", "mypy", "pdoc-pyo3-sample-library (==1.0.11)", "pygments (>=2.14.0)", "pytest", "pytest-cov", "pytest-timeout", "ruff", "tox", "types-pygments"]
 
 [[package]]
 name = "platformdirs"
@@ -560,4 +560,4 @@ docs = []
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "1adeeb04a8b0fa4c624b44b179d7393f46f4e30c883c2a227fdca414a1842daa"
+content-hash = "173691500595e86c5a3a3ec3a9d919e2f4d2f3232d2fd10c8b89e1f36551dbb4"
