@@ -17,7 +17,7 @@ $$
 $$
 
 
-Where, $$s_i$$ is the initial accelerometer data for each i-th dimension, $$a_i$$ is the scaling factor, $$b_i$$  is the offset factor, and $$\tilde{s_i}$$ is the calibrated accelerometer signal.
+Where, $s_i$ is the initial accelerometer data for each i-th dimension, $a_i$ is the scaling factor, $b_i$  is the offset factor, and $\tilde{s_i}$ is the calibrated accelerometer signal.
 
 ## Summary of process:
 1. Find non-movement times: 
