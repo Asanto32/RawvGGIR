@@ -6,7 +6,10 @@
 
 - [Calibration:](#calibration)
   - [Summary of process:](#summary-of-process)
+    - [**References**](#references)
 - [Calcuate metrics](#calcuate-metrics)
+  - [Queries](#queries)
+    - [**References**](#references-1)
 
 
 # Calibration:
@@ -29,7 +32,7 @@ Where, $s_i$ is the initial accelerometer data for each i-th dimension, $a_i$ is
    - Defined by GGIR a minimum of 12 hours of data. Breaks data into 12 hour chunks and tries to calibrate over chunks. If first chunk is unsuccessful, moves to next chunk. If successful in the first chunk, ends, and applies calibration. (NOTE, is this the right way to do this??)
    - Sphere "well and sparsely populated", *spherecrit*, checks that there are points above a predetermined cutoff value *g* force (default 0.3), in both positive and negative directions (mean(accel) < -*spherecrit*) && (mean(accel) > *spherecrit*)
 3. 	Find calibration error from only those windows (trim accel[x,y,z] to 10s  windows that satisfy above criteria):
-  - Error defined as $err(t)= \sqrt{(x(t)^2+y(t)^2+z(t)^2 )}-1$; *norm(mean(acc)) -1*
+  - Error defined as $err(t)= \sqrt{x(t)^2+y(t)^2+z(t)^2 }-1$; *norm(mean(acc)) -1*
   - Iterative closest point fit until *max_iter* or *err<tol_er*
   - Solve for the three scaling and offset values
   - Check if new calibration error is < cal_error_start && 0.01 (apply offset + scale to windowed acc(x,y,z);    (example from scikit)     
@@ -45,7 +48,7 @@ Where, $s_i$ is the initial accelerometer data for each i-th dimension, $a_i$ is
   - Can include temperature data too (FUTURE)
   - If successful calibration, apply calibration to raw accelerometer data. Return calibrated data, as well as scale, offset, and final cal_error.
 
-**References**
+### **References**
 Source code : https://rdrr.io/cran/GGIR/src/R/g.calibrate.R
 Python implementation from Pfizer : https://github.com/pfizer-opensource/scikit-digital-health/blob/main/src/skdh/preprocessing/calibrate.py
 Paper:
@@ -55,13 +58,16 @@ https://journals.physiology.org/doi/epdf/10.1152/japplphysiol.00421.2014
 # Calcuate metrics
 
 Key physical activity metrics are calculated from the calibrated, raw accelerometer data. They are then downsampled (mean over the window length) over the three “epochs”. GGIR uses three window lengths, with some rules about length of each: shortest must be at least 1 second, the largest window must be a multiple of the second.  Key metrics we will focus on in Phase 1, are ENMO (Euclidean norm, minus one) and anglez (angle relative to z-axis). These are calculated at the sample level and then a moving mean over the desired window lengths is applied. These metrics are used for all subsequent physical activity measures and sleep detection (in GGIR).
+
+## Queries
 Key note about ENMO: default in GGIR and scikit is to trim any negative values to 0. Scikit has option to keep absolute values. Some questions about these metrics, mostly for the future:
-  a.	Should we include abs(ENMO)?
-  b.	Other desirable metrics, there is a long list included in GGIR, including filtering methods? are these used in literature?
-  c.	GGIR calculates the anglez metric using a rolling median of acc(x,y,z). This rolling median is calculated over a window that is defined as: 5* sampling_rate +1, unless sampling_rate is > 10, then it is hardcoded to 5*10 +1. Scikit does not do this (and in my preliminary test I did not either and it didn’t seem to cause any issues). Not sure the need for this, especially since angle_z is downsampled after being calculated.
+
+- Should we include abs(ENMO)?
+- Other desirable metrics, there is a long list included in GGIR, including filtering methods? are these used in literature?
+- GGIR calculates the anglez metric using a rolling median of acc(x,y,z). This rolling median is calculated over a window that is defined as: 5* sampling_rate +1, unless sampling_rate is > 10, then it is hardcoded to 5*10 +1. Scikit does not do this (and in my preliminary test I did not either and it didn’t seem to cause any issues). Not sure the need for this, especially since angle_z is downsampled after being calculated.
 
 
-**References**
+### **References**
 GGIR source : https://rdrr.io/cran/GGIR/src/R/g.applymetrics.R
 
 Python Scikit implementation : https://github.com/pfizer-opensource/scikit-digital-health/blob/main/src/skdh/activity/metrics.py
