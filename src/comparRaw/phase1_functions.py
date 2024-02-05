@@ -17,6 +17,8 @@ from typing import Any
 def _gt3loader_(file_name):
     with FileReader(file_name) as reader:
         df = reader.to_pandas()
+        sample_rate = reader.info.sample_rate
+        df['sample_rate'] = sample_rate
     return df
 
 def _timefix_(raw_data,sampling_rate):
